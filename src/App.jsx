@@ -20,7 +20,7 @@ const NotFound = () => (
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/studiomaker">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
