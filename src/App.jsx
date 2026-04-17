@@ -6,6 +6,8 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import ProjectDetail from './pages/ProjectDetail';
+import CustomCursor from './components/CustomCursor';
 
 const NotFound = () => (
   <div className="h-screen flex flex-col items-center justify-center text-center p-6">
@@ -21,11 +23,13 @@ const NotFound = () => (
 export default function App() {
   return (
     <Router basename="/studiomaker">
+      <CustomCursor />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />
           <Route path="portfolio" element={<Portfolio />} />
+          <Route path="portfolio/:id" element={<ProjectDetail />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
